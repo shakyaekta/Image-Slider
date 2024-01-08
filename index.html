@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image slider</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="gallery-wrap">
+        <i class="fa-solid fa-backward"></i>
+        
+    <div class="gallery">
+        <div>
+            <span><img src="Images/abbat-693vTvWzeCk-unsplash.jpg" alt=""></span>
+            <span><img src="Images/christopher-campbell-rDEOVtE7vOs-unsplash.jpg" alt=""></span>
+            <span><img src="Images/ethan-hoover-0YHIlxeCuhg-unsplash.jpg" alt=""></span>
+        </div>
+        <div>
+            <span><img src="Images/matheus-ferrero-pg_WCHWSdT8-unsplash.jpg" alt=""></span>
+            <span><img src="Images/michael-dam-mEZ3PoFGs_k-unsplash.jpg" alt=""></span>
+            <span><img src="Images/mubariz-mehdizadeh-t3zrEm88ehc-unsplash.jpg" alt=""></span>
+        </div>
+        <div>
+            <span><img src="Images/panitan-punpuang-OuxJHYeUYpk-unsplash.jpg" alt=""></span>
+            <span><img src="Images/sergio-de-paula-c_GmwfHBDzk-unsplash.jpg" alt=""></span>
+            <span><img src="Images/stefan-stefancik-QXevDflbl8A-unsplash.jpg" alt=""></span>
+        </div>
+
+    </div>
+    <i class="fa-solid fa-forward"></i>
+    </div>
+    <script >
+        let scrollcontainer=document.querySelector(".gallery");
+        let backBtn=document.querySelector(".fa-backward");
+        let forwardBtn=document.querySelector(".fa-forward");
+
+        scrollcontainer.addEventListener("wheel",(evt)=>{
+            evt.preventDefault();
+            scrollcontainer.scrollLeft+=evt.deltaY;
+            scrollcontainer.style.scrollBehavior="auto";
+
+        });
+        forwardBtn.addEventListener("click",()=>
+        {
+            scrollcontainer.style.scrollBehavior="smooth";
+            scrollcontainer.scrollLeft+=900;
+        });
+        backBtn.addEventListener("click",()=>
+        {
+            scrollcontainer.style.scrollBehavior="smooth";
+            scrollcontainer.scrollLeft-=900;
+        });
+    </script>
+</body>
+</html>
